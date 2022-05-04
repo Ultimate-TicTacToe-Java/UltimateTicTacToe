@@ -1,0 +1,11 @@
+ULTIMATE TIC TAC TOE
+
+Zasady:
+- plansza składa się z 9 pól
+- każde pole jest mniejszą planszą do gry w kółko i krzyżyk
+- gracze stawiają kółko lub krzyżyk w miejsca w polach aż któryś z nich wygra lub nastąpi remis
+- gracz, który wygra w danym polu stawia tam swój symbol
+- gra trwa aż do uzupełnienia wszystkich mniejszych pól lub wygranej któregoś z graczy
+
+Źródło:
+https://en.wikipedia.org/wiki/Ultimate_tic-tac-toe
