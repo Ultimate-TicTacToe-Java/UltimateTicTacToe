@@ -1,0 +1,10 @@
+[Gra]1<>-1[Duża plansza]
+[Gra]1-2[Gracz]
+
+[Duża plansza]1<>-9[Mała plansza]
+[Mała plansza]1<>-9[Pole]
+
+[Pole]*<>-0..1[Symbol]
+[Symbol]^-[Kółko]
+[Gracz]1<>-1[Symbol]
+[Symbol]^-[Krzyżyk]
