@@ -1,5 +1,6 @@
 package main;
 
+import bigBoard.BigBoard;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -10,7 +11,9 @@ public class Game extends Application {
     //TU DAJEMY WSZYSTKIE KOMPONENTY
     public Parent createContent(){
 
-        return null;
+        BigBoard bigBoard = new BigBoard();
+
+        return bigBoard;
     }
 
     @Override
