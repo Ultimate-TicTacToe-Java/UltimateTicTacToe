@@ -1,0 +1,13 @@
+ULTIMATE TIC TAC TOE
+Ultimate tic tac toe, jest rozszerzeniem podatawowej gry tic tac toe. 
+Zasady:
+- plansza składa się z 9 plansz do gry
+- każda plansza posiada 9 pól do wstawienia swoje symbolu
+- Postawienie symbolu na polu X (np. nr. 4), narzuca konieczność następnego ruchu na planszy nr X (np. 4).
+- gracze stawiają kółko lub krzyżyk w polach aż któryś z nich wygra lub nastąpi remis na danej planszy.
+- gracz, który wygra w danej planszy stawia tam swój symbol. 
+- Rozgrywka dopóki ktoś nie wygra większości plansz, lub nastąpi remis.
+- jeśli rozgrywka na wybranej planszy jest już zakończona, gracz wybiera dowolne pole, na dowolnej planszy
+
+Źródło:
+https://en.wikipedia.org/wiki/Ultimate_tic-tac-toe
