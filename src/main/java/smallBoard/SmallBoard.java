@@ -1,9 +1,7 @@
 package smallBoard;
 
-import javafx.geometry.Insets;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.paint.Paint;
+
 
 public class SmallBoard extends GridPane {
 
@@ -12,6 +10,13 @@ public class SmallBoard extends GridPane {
 
     public SmallBoard(){
         setPrefSize(WIDTH,HEIGHT);
-        setBackground(new Background(new BackgroundFill(Color.color(Math.random(),Math.random(),Math.random()), CornerRadii.EMPTY, Insets.EMPTY)));
+        getStyleClass().add("smallBoard");
+
+        for(int i = 0;i<3;i++){
+            for(int j = 0;j<3;j++){
+                SmallBoardButton button = new SmallBoardButton();
+                add(button,i,j);
+            }
+        }
     }
 }

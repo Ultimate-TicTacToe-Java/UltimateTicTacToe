@@ -6,6 +6,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.Objects;
+
 public class Game extends Application {
 
     //TU DAJEMY WSZYSTKIE KOMPONENTY
@@ -20,6 +22,9 @@ public class Game extends Application {
     public void start(Stage stage) {
         Parent root = createContent();
         Scene scene = new Scene(root);
+        String css = Objects.requireNonNull(this.getClass().getResource("/main/style.css")).toExternalForm();
+        scene.getStylesheets().add(css);
+
         stage.setTitle("Ultimate Tic Tac Toe!");
         stage.setScene(scene);
         stage.show();
