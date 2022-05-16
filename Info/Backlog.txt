@@ -1,9 +1,0 @@
-Backlog:
-1 - stworzenie mniejszego pola do gry w kółko i krzyżyk
-2 - stworzenie głównej planszy do gry składającej się z 9 mniejszych pól
-3 - obsługa zdarzenia OnClick gdy gracz naciśnie przycisk myszy na dane pole
-4 - sprawdzenie czy gracz wygrał grę w danym polu
-5 - sprawdzenie czy gracz wygrał grę na głównej planszy
-6 - dodanie odpowiednich notyfikacji podczas gry i w przypadku zwycięstwa któregoś z graczy
-7 - przetestowanie gry
-8* - implementacja sieciowa gry
