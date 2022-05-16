@@ -1,21 +1,29 @@
 package main;
 
 import bigBoard.BigBoard;
+import gameInfo.gameInfo;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.layout.FlowPane;
 import javafx.stage.Stage;
-
 import java.util.Objects;
 
 public class Game extends Application {
 
     //TU DAJEMY WSZYSTKIE KOMPONENTY
     public Parent createContent(){
+        FlowPane root = new FlowPane();
 
-        BigBoard bigBoard = new BigBoard();
+        root.setPrefSize(1400, 900);
 
-        return bigBoard;
+        gameInfo info = new gameInfo();
+        BigBoard bigBoard = new BigBoard(info);
+
+        // DODAJ BIG BOARD I GAME INFO DO FLOWPANE
+        root.getChildren().add(bigBoard);
+        root.getChildren().add(info);
+        return root;
     }
 
     @Override
