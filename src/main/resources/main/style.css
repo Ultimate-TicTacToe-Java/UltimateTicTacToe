@@ -1,0 +1,11 @@
+.button{
+    -fx-border-color: darkgrey;
+    -fx-border-width: 2;
+    -fx-font-size: 42;
+    -fx-font-family: "Consolas";
+}
+
+.smallBoard{
+    -fx-border-color: black;
+    -fx-border-width: 3;
+}
