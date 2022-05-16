@@ -1,14 +1,4 @@
 <div id="top"></div>
-
--->
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
-
-
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
@@ -98,15 +88,15 @@ Build the project
 <!-- BACKLOG -->
 ## Backlog
 
-[x] - creating a smaller tic-tac-toe game board<br>
-[x] - create main game board consisting of 9 smaller fields<br>
-[x] - handling the OnClick event when the player presses the mouse button on a given field<br>
-[x] - check if the player has won the game in a given field<br>
-[x] - check if the player has won the game on the main board<br>
-[ ] - adding appropriate notifications during the game and in case of a player victory<br>
-    - notifications in console are done<br>
-[ ] - testing the game<br>
-[ ] - (*) network implementation of the game<br>
+- [x] create a smaller tic-tac-toe game board
+- [x] create main game board consisting of 9 smaller fields
+- [x] handling the OnClick event when the player presses the mouse button on a given field
+- [x] check if the player has won the game in a given field
+- [x] check if the player has won the game on the main board
+- [ ] adding appropriate notifications during the game and in case of a player victory
+    - [x] notifications in console are done
+- [ ] testing the game
+- [ ] network implementation of the game (optional)
 
 # Class diagram
 ![UML diagram](images/uml_diagram.png)
