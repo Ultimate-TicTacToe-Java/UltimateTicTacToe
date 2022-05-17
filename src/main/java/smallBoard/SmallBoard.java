@@ -18,16 +18,16 @@ public class SmallBoard extends GridPane {
     // Debug to check if player won
     public int boardWin = 0;
 
-    public SmallBoard(gameInfo info, int id, BigBoard bb){
+    public SmallBoard(gameInfo info, int id, BigBoard bb) {
         this.ID = id;
         this.bb = bb;
         gameLogic = new logic(id);
 
-        setPrefSize(WIDTH,HEIGHT);
-        getStyleClass().add("smallBoard");
+        setPrefSize(WIDTH, HEIGHT);
+        getStyleClass().add("SmallBoard");
 
-        for(int i = 0;i<3;i++){
-            for(int j = 0;j<3;j++){
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
                 SmallBoardButton button = new SmallBoardButton(i, j, info, this);
                 add(button, i, j);
             }
@@ -42,12 +42,21 @@ public class SmallBoard extends GridPane {
         WON = won;
         System.out.printf("[ board %d ] -> ", ID);
 
-        if(won == 1)
-            System.out.println("X WON");
-        else if(won == 2)
-            System.out.println("O WON");
-        else if(won == 3)
-            System.out.println("DRAW");
+        switch (WON) {
+            case 1 -> {
+                System.out.println("X WON");
+                getStyleClass().add("WonX");
+            }
+            case 2 -> {
+                System.out.println("O WON");
+                getStyleClass().add("WonO");
+            }
+
+            case 3 -> {
+                System.out.println("DRAW");
+                getStyleClass().add("Draw");
+            }
+        }
 
         // Update BigBoard logic
         bb.updateLogic(ID, won);

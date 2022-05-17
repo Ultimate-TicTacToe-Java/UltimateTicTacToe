@@ -10,6 +10,12 @@
 <div align="center" >
 </div>
 
+Font credits
+Blonde Fonts -- http://rubberducky.nu/blonde
+
+Image credits
+https://pixabay.com/pl/users/lobsarts-19515294/
+
 # Game description
 
 Ultimate tic tac toe, is an extension of the taxing game of tic tac toe. 
