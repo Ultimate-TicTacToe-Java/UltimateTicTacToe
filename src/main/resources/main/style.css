@@ -1,3 +1,7 @@
+.root{
+    color: aliceblue;
+    background-color: black;
+}
 .button{
     -fx-border-color: darkgrey;
     -fx-border-width: 2;
