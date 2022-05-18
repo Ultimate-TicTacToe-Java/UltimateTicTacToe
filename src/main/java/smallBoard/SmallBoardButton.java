@@ -1,7 +1,6 @@
 package smallBoard;
 
-import gameInfo.gameInfo;
-import gameLogic.logic;
+import gameInfo.GameInfo;
 import javafx.scene.control.Button;
 
 public class SmallBoardButton extends Button {
@@ -13,7 +12,7 @@ public class SmallBoardButton extends Button {
 
     private SmallBoard gameBoard;
 
-    public SmallBoardButton(int x, int y, gameInfo info, SmallBoard board){
+    public SmallBoardButton(int x, int y, GameInfo info, SmallBoard board){
         this.gameBoard = board;
         this.x = x;
         this.y = y;
@@ -24,15 +23,12 @@ public class SmallBoardButton extends Button {
         setOnAction(e -> {
             if(gameBoard.checkBoardWin() != 0)
                 return;
-
-            char choice = i % 2 == 0 ? 'X' : 'O';
-
-            i++;
-
-            setText(String.valueOf(choice));
+            
+            if(!this.getText().isEmpty()) return;
+            setText(String.valueOf(gameBoard.getGameLogic().getMark()));
 
             // Update game logic board
-            gameBoard.updateLogic(x, y, choice);
+            gameBoard.updateLogic(x, y);
 
             int won = gameBoard.checkBoardWin();
             if(won != 0) {

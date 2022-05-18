@@ -1,7 +1,7 @@
 package main;
 
 import bigBoard.BigBoard;
-import gameInfo.gameInfo;
+import gameInfo.GameInfo;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
@@ -19,7 +19,7 @@ public class Game extends Application {
 
         root.setPrefSize(1400, 950);
 
-        gameInfo info = new gameInfo();
+        GameInfo info = new GameInfo();
         BigBoard bigBoard = new BigBoard(info);
 
         // DODAJ BIG BOARD I GAME INFO DO FLOWPANE
