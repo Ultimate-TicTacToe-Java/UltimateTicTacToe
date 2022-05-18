@@ -11,12 +11,18 @@ public class BigBoard extends GridPane {
     public static final int HEIGHT = 900;
     public static final int WIDTH = 900;
     private static final int[][] COORDS = new int[9][2];
-    private final logic bigLogic = new logic(0);
+    private final logic bigLogic;
 
     public BigBoard(gameInfo info) {
+        bigLogic = new logic(0);
+        getStyleClass().add("BigBoard");
         setPrefSize(WIDTH, HEIGHT);
-        int ids = 1;
 
+        generateSmallBoards(info);
+    }
+
+    private void generateSmallBoards(gameInfo info) {
+        int ids = 1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 SmallBoard smallBoard = new SmallBoard(info, ids, this);
