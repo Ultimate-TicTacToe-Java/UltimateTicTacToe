@@ -1,7 +1,7 @@
 package bigBoard;
 
-import gameInfo.gameInfo;
-import gameLogic.logic;
+import gameInfo.GameInfo;
+import gameLogic.Logic;
 import javafx.scene.layout.GridPane;
 import smallBoard.SmallBoard;
 
@@ -11,17 +11,17 @@ public class BigBoard extends GridPane {
     public static final int HEIGHT = 900;
     public static final int WIDTH = 900;
     private static final int[][] COORDS = new int[9][2];
-    private final logic bigLogic;
+    private final Logic bigLogic;
 
-    public BigBoard(gameInfo info) {
-        bigLogic = new logic(0);
+    public BigBoard(GameInfo info) {
+        bigLogic = new Logic();
         getStyleClass().add("BigBoard");
         setPrefSize(WIDTH, HEIGHT);
 
         generateSmallBoards(info);
     }
 
-    private void generateSmallBoards(gameInfo info) {
+    private void generateSmallBoards(GameInfo info) {
         int ids = 1;
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {

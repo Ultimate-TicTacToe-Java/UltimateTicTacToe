@@ -1,6 +1,6 @@
 package gameLogic;
 
-public class logic {
+public class Logic {
 
     /*
         0 - ` ` clear field
@@ -9,12 +9,11 @@ public class logic {
     */
 
     private int[][] game = new int[3][3];
-    private int id;
     private int moveCount = 9;
+    private static char currentPlayer = 'x';
 
-    public logic(int id) {
+    public Logic() {
         clearBoard();
-        this.id = id;
     }
 
     private void clearBoard() {
@@ -87,5 +86,14 @@ public class logic {
         }
 
         return 1;
+    }
+
+    public void setNextPlayer(){
+        if(currentPlayer == 'x') currentPlayer = 'o';
+        else currentPlayer = 'x';
+    }
+
+    public char getMark(){
+        return currentPlayer;
     }
 }
