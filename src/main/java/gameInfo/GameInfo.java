@@ -1,29 +1,75 @@
 package gameInfo;
 
-import gameLogic.Logic;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
-import javafx.scene.text.*;
+import javafx.util.Duration;
 
 public class GameInfo extends GridPane {
-    public static final int HEIGHT = 900;
-    public static final int WIDTH = 500;
-    private static final Text text = new Text();
 
-    public GameInfo() {
-        setPrefSize(WIDTH,HEIGHT);
+    private static Timeline timeline;
+    private int timeInSeconds = 0;
 
-        // Add game info
-        text.setFont(new Font(40));
-        text.setText(String.format("Now moves: X"));
-        boolean add = getChildren().add(text);
+    private char STARTING_PLAYER = 'x';
+
+    private static Label labelGameTime;
+    private static ImageView oSymbol;
+    private static ImageView xSymbol;
+
+    public GameInfo(Scene scene) {
+        labelGameTime = (Label) scene.lookup("#labelGameTime");
+        oSymbol = (ImageView) scene.lookup("#oSymbol");
+        xSymbol = (ImageView) scene.lookup("#xSymbol");
+        reset();
+        startTimer();
     }
 
-    public static void changeTurnInfo(char mark){
-        text.setText(String.format("Now moves: %c", mark));
+    private void reset() {
+        timeInSeconds = 0;
+        update(STARTING_PLAYER);
     }
 
-    public void setInfo(String info) {
-        text.setText(info);
+    public static void update(char player) {
+        // Update labels
+        disableXO();
+
+        if (player == 'x' || player == 'X') {
+            setX();
+        } else {
+            setO();
+        }
     }
+
+    private static void disableXO() {
+        oSymbol.setVisible(false);
+        xSymbol.setVisible(false);
+    }
+
+    private static void setX() {
+        xSymbol.setVisible(true);
+    }
+
+    private static void setO() {
+        oSymbol.setVisible(true);
+    }
+
+    private void startTimer() {
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(
+            new KeyFrame(Duration.seconds(1), e -> {
+            labelGameTime.setText(secondsToString(timeInSeconds));
+            timeInSeconds++;
+        }));
+        timeline.play();
+    }
+
+    private String secondsToString(int pTime) {
+        return String.format("%02d:%02d", pTime / 60, pTime % 60);
+    }
+
 }
-

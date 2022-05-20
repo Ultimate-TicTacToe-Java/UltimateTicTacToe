@@ -3,29 +3,37 @@ package main;
 import bigBoard.BigBoard;
 import gameInfo.GameInfo;
 import javafx.application.Application;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.layout.FlowPane;
-import javafx.stage.Screen;
+import javafx.scene.layout.Pane;
+import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.Objects;
+import javafx.fxml.FXMLLoader;
 
 public class Game extends Application {
 
-    //TU DAJEMY WSZYSTKIE KOMPONENTY
-    public Parent createContent(){
-        FlowPane root = new FlowPane();
+    // TU DAJEMY WSZYSTKIE KOMPONENTY
+    public Parent createContent() {
+        FXMLLoader temp = new FXMLLoader(getClass().getResource("/GameWindow/main.fxml"));
 
-        root.setPrefSize(1400, 950);
+        // STACKPANE - naklada elementy na siebie, przez co board jest na fxmlu, ale nw
+        // czy da sie
+        // fajnie rozmiescic inne potrzebne elementy :(
+        StackPane root = new StackPane();
+        Pane backgroundPane = null;
+        try {
+            backgroundPane = temp.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
-        GameInfo info = new GameInfo();
-        BigBoard bigBoard = new BigBoard(info);
+        // BOARD
+        BigBoard bigBoard = new BigBoard();
 
-        // DODAJ BIG BOARD I GAME INFO DO FLOWPANE
-        root.getChildren().add(bigBoard);
-        root.getChildren().add(info);
-
+        root.getChildren().addAll(backgroundPane, bigBoard);
 
         return root;
     }
@@ -34,6 +42,7 @@ public class Game extends Application {
     public void start(Stage primaryStage) {
         Parent root = createContent();
         Scene scene = new Scene(root);
+
         String css = Objects.requireNonNull(this.getClass().getResource("/main/style.css")).toExternalForm();
         scene.getStylesheets().add(css);
 
@@ -41,13 +50,7 @@ public class Game extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
-        primaryStage.setTitle("Hello World!");
-        primaryStage.setScene(scene);
-        primaryStage.show();
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        primaryStage.setX((primScreenBounds.getWidth() - primaryStage.getWidth()) / 2);
-        primaryStage.setY((primScreenBounds.getHeight() - primaryStage.getHeight()) / 2);
+        GameInfo info = new GameInfo(scene);
     }
 
     public static void main(String[] args) {

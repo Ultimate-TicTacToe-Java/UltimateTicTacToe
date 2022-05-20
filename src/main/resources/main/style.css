@@ -1,57 +1,81 @@
-.root{
+/*.root {
     color: aliceblue;
     background-color: black;
-    /*-fx-alignment: center;*/
-}
-.button{
-    -fx-background-color:transparent;
+}*/
+
+.button {
+    -fx-background-color: transparent;
     -fx-border-color: darkgrey;
     -fx-border-width: 2;
-    -fx-font-size: 36;
+    -fx-padding: 0;
+    -fx-font-size: 70;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
     -fx-font-family: "Consolas";
-    -fx-background-color:transparent;
 }
 
-.BigBoard{
-    -fx-padding: 50px;
-    -fx-border-color: red;
+.button .text{
+    -fx-stroke: black;
+    -fx-stroke-width: 1.5;
+}
 
+.BigBoard {
+    -fx-padding: 50px;
     -fx-border-width: 20;
     background-color: aqua;
     background-color: aqua;
 }
 
-.SmallBoard{
-    -fx-opacity: 0.5;
-    -fx-background-color:transparent;
-    padding: 150px;
+.SmallBoard {
+    -fx-opacity: 1;
+    -fx-background-color: transparent;
     -fx-border-color: black;
     -fx-border-width: 3;
 }
 
-.Draw{
+.Draw {
     -fx-border-color: yellow;
 }
-.WonX{
+
+.Draw .label{
+    -fx-font-size: 150;
+    -fx-font-weight: bold;
+    -fx-text-fill: yellow;
+}
+
+.WonX {
     -fx-border-color: red;
 }
 
-.WonO{
+.WonX .label{
+    -fx-font-size: 200;
+    -fx-font-weight: bold;
+    -fx-text-fill: red;
+}
+
+.WonO {
     -fx-border-color: blue;
 }
 
-.backgroundColor{
-    /*-fx-background-color: linear-gradient(45deg, rgba(16, 69, 115, 1) 0%, rgba(0, 169, 157, 1) 100%);*/
+.WonO .label{
+    -fx-font-size: 200;
+    -fx-font-weight: bold;
+    -fx-text-fill: blue;
+}
+
+.backgroundColor {
     -fx-background-color: linear-gradient(to top right, #104573, #00a99d);
 }
+
 @font-face {
     /*todo check font import*/
     /*http://fxexperience.com/2012/12/use-webgoogle-fonts-in-javafx/*/
     font-family: 'Water Brush';
     /*src: url('././font/ulove.tiff');*/
-    src:url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
+    src: url('https://fonts.googleapis.com/css2?family=Water+Brush&display=swap');
 }
-.tictactoeLogo{
+
+.tictactoeLogo {
     /*-fx-font-family: "uLove";*/
     -fx-font-family: 'Water Brush', cursive;
     -fx-color: #a7f5ff;

@@ -3,8 +3,11 @@ package smallBoard;
 import bigBoard.BigBoard;
 import gameInfo.GameInfo;
 import gameLogic.Logic;
+import javafx.geometry.HPos;
+import javafx.geometry.Pos;
+import javafx.geometry.VPos;
+import javafx.scene.control.Label;
 import javafx.scene.layout.*;
-
 
 public class SmallBoard extends GridPane {
 
@@ -23,7 +26,7 @@ public class SmallBoard extends GridPane {
     // Debug to check if player won
     public int boardWin = 0;
 
-    public SmallBoard(GameInfo info, int id, BigBoard bb) {
+    public SmallBoard(int id, BigBoard bb) {
         this.ID = id;
         this.bb = bb;
         gameLogic = new Logic();
@@ -33,7 +36,7 @@ public class SmallBoard extends GridPane {
 
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
-                SmallBoardButton button = new SmallBoardButton(i, j, info, this);
+                SmallBoardButton button = new SmallBoardButton(i, j, this);
                 add(button, i, j);
             }
         }
@@ -51,15 +54,18 @@ public class SmallBoard extends GridPane {
             case 1 -> {
                 System.out.println("X WON");
                 getStyleClass().add("WonX");
+                setBoardFull("X");
             }
             case 2 -> {
                 System.out.println("O WON");
                 getStyleClass().add("WonO");
+                setBoardFull("O");
             }
 
             case 3 -> {
                 System.out.println("DRAW");
                 getStyleClass().add("Draw");
+                setBoardFull("X/O");
             }
         }
 
@@ -70,6 +76,17 @@ public class SmallBoard extends GridPane {
     public void updateLogic(int x, int y) {
         gameLogic.update(x, y, gameLogic.getMark());
         gameLogic.setNextPlayer();
-        GameInfo.changeTurnInfo(gameLogic.getMark());
+        GameInfo.update(gameLogic.getMark());
+    }
+
+    public void setBoardFull(String text) {
+        getChildren().removeIf(node -> node instanceof SmallBoardButton);
+        Label label = new Label(text);
+        label.setPrefHeight(HEIGHT);
+        label.setPrefWidth(WIDTH);
+        label.setAlignment(Pos.CENTER);
+        setValignment(label, VPos.CENTER);
+        setHalignment(label, HPos.CENTER);
+        getChildren().add(label);
     }
 }
