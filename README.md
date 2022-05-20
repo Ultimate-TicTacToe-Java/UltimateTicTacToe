@@ -35,6 +35,9 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [Open JavaFX SDK](https://openjfx.io/)
 * [yUML](https://yuml.me/)
 
+* Font credits - [Blonde Fonts](http://rubberducky.nu/blonde)
+* Image credits - [lobsarts](https://pixabay.com/pl/users/lobsarts-19515294/)
+
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
