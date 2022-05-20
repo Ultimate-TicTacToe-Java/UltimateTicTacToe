@@ -19,8 +19,9 @@ public class Game extends Application {
     public Parent createContent() {
         FXMLLoader temp = new FXMLLoader(getClass().getResource("/GameWindow/main.fxml"));
 
-        //STACKPANE - naklada elementy na siebie, przez co board jest na fxmlu, ale nw czy da sie
-        //fajnie rozmiescic inne potrzebne elementy :(
+        // STACKPANE - naklada elementy na siebie, przez co board jest na fxmlu, ale nw
+        // czy da sie
+        // fajnie rozmiescic inne potrzebne elementy :(
         StackPane root = new StackPane();
         Pane backgroundPane = null;
         try {
@@ -29,9 +30,8 @@ public class Game extends Application {
             e.printStackTrace();
         }
 
-        //BOARD
-        BigBoard bigBoard = new BigBoard(new GameInfo());
-
+        // BOARD
+        BigBoard bigBoard = new BigBoard();
 
         root.getChildren().addAll(backgroundPane, bigBoard);
 
@@ -49,6 +49,8 @@ public class Game extends Application {
         primaryStage.setTitle("Ultimate Tic Tac Toe!");
         primaryStage.setScene(scene);
         primaryStage.show();
+
+        GameInfo info = new GameInfo(scene);
     }
 
     public static void main(String[] args) {

@@ -5,12 +5,11 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1506.0" styleClass="backgroundColor" stylesheets="@../main/style.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1506.0" styleClass="backgroundColor" stylesheets="@../main/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Group layoutX="563.0" layoutY="119.0">
          <children>
@@ -24,40 +23,43 @@
                   <Image url="@../img/loopInf2Once.gif" />
                </image>
             </ImageView>
-            <VBox layoutX="429.0" layoutY="524.0" prefHeight="196.0" prefWidth="380.0">
+            <VBox layoutX="501.0" layoutY="474.0" prefHeight="196.0" prefWidth="380.0">
                <children>
-                  <Label prefHeight="44.0" prefWidth="371.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Aktualnie czekamy na ruch" textAlignment="CENTER" textFill="#ffffffe5">
+                  <Label prefHeight="27.0" prefWidth="380.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Teraz rusza się" textAlignment="CENTER" textFill="#ffffffe5">
                      <font>
                         <Font size="27.0" />
                      </font>
                      <VBox.margin>
-                        <Insets left="50.0" />
+                        <Insets />
                      </VBox.margin>
                   </Label>
-                  <HBox alignment="CENTER" prefHeight="87.0" prefWidth="209.0">
-                     <children>
-                        <ImageView accessibleRole="BUTTON" fitHeight="90.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/O.gif" />
-                           </image>
-                        </ImageView>
-                        <ImageView accessibleRole="BUTTON" fitHeight="113.0" fitWidth="87.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../img/X.gif" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
+                  <Pane id="BoardContainer" prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #a7f5ff; -fx-opacity: 0.05; -fx-background-radius: 100;" />
+                  <ImageView id="oSymbol" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true" scaleX="1.3" scaleY="1.3" translateX="120.0">
+                     <image>
+                        <Image url="@../img/O.gif" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <ImageView id="xSymbol" accessibleRole="BUTTON" fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" scaleX="1.3" scaleY="1.3" translateX="120.0" translateY="-200.0">
+                     <image>
+                        <Image url="@../img/X.gif" />
+                     </image>
+                     <VBox.margin>
+                        <Insets top="50.0" />
+                     </VBox.margin>
+                  </ImageView>
                </children>
             </VBox>
-            <VBox layoutX="465.0" layoutY="283.0" prefHeight="161.0" prefWidth="383.0">
+            <VBox layoutX="499.0" layoutY="265.0" prefHeight="161.0" prefWidth="383.0">
                <children>
                   <Label prefHeight="39.0" prefWidth="383.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Czas Rozgrywki:" textAlignment="CENTER" textFill="#ffffffe5">
                      <font>
                         <Font size="27.0" />
                      </font>
                   </Label>
-                  <Label id="labelGameTime" prefHeight="66.0" prefWidth="391.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="00:51" textAlignment="CENTER" textFill="#ffffffe6">
+                  <Label id="labelGameTime" prefHeight="66.0" prefWidth="391.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="00:00" textAlignment="CENTER" textFill="#ffffffe6">
                      <font>
                         <Font size="45.0" />
                      </font>
@@ -66,7 +68,7 @@
             </VBox>
          </children>
       </Group>
-      <Label layoutX="990.0" layoutY="41.0" prefHeight="146.0" prefWidth="454.0" style="-fx-font-size: 50; -fx-font-family: arial; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" styleClass="tictactoeLogo" text="Ultimate TicTacToe" textFill="#a7f5ff">
+      <Label layoutX="1045.0" layoutY="32.0" prefHeight="146.0" prefWidth="426.0" style="-fx-font-size: 50; -fx-font-family: arial; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" styleClass="tictactoeLogo" text="UltimateTic Tac Toe" textAlignment="CENTER" textFill="#a7f5ff" wrapText="true">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
@@ -74,6 +76,5 @@
             <Insets left="20.0" />
          </padding>
       </Label>
-      <Pane id="BoardContainer" layoutX="63.0" layoutY="87.0" prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #a7f5ff; -fx-opacity: 0.05; -fx-background-radius: 100;" />
    </children>
 </Pane>
