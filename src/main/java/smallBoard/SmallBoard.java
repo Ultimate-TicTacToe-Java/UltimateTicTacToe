@@ -1,8 +1,8 @@
 package smallBoard;
 
 import bigBoard.BigBoard;
-import gameInfo.gameInfo;
-import gameLogic.logic;
+import gameInfo.GameInfo;
+import gameLogic.Logic;
 import javafx.scene.layout.*;
 
 
@@ -12,16 +12,21 @@ public class SmallBoard extends GridPane {
     public static final int HEIGHT = 300;
     public static int WON = 0;
     private int ID;
-    private logic gameLogic;
+
+    public Logic getGameLogic() {
+        return gameLogic;
+    }
+
+    private Logic gameLogic;
     private BigBoard bb;
 
     // Debug to check if player won
     public int boardWin = 0;
 
-    public SmallBoard(gameInfo info, int id, BigBoard bb) {
+    public SmallBoard(GameInfo info, int id, BigBoard bb) {
         this.ID = id;
         this.bb = bb;
-        gameLogic = new logic(id);
+        gameLogic = new Logic();
 
         setPrefSize(WIDTH, HEIGHT);
         getStyleClass().add("SmallBoard");
@@ -62,7 +67,9 @@ public class SmallBoard extends GridPane {
         bb.updateLogic(ID, won);
     }
 
-    public void updateLogic(int x, int y, char choice) {
-        gameLogic.update(x, y, choice);
+    public void updateLogic(int x, int y) {
+        gameLogic.update(x, y, gameLogic.getMark());
+        gameLogic.setNextPlayer();
+        GameInfo.changeTurnInfo(gameLogic.getMark());
     }
 }

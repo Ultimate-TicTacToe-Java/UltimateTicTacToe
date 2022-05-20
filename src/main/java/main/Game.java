@@ -1,7 +1,7 @@
 package main;
 
 import bigBoard.BigBoard;
-import gameInfo.gameInfo;
+import gameInfo.GameInfo;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Node;
@@ -22,17 +22,11 @@ public class Game extends Application {
         FXMLLoader temp = new FXMLLoader(getClass().getResource("/GameWindow/main.fxml"));
 
         Pane root = new Pane();
-
         try {
             root.getChildren().add(temp.load());
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        // root.setPrefSize(1400, 950);
-
-        // DODAJ BIG BOARD I GAME INFO DO FLOWPANE
-
         return root;
     }
 
