@@ -1,8 +1,7 @@
-package smallBoard;
+package tictactoe.Arena;
 
-import bigBoard.BigBoard;
-import gameInfo.GameInfo;
-import gameLogic.Logic;
+import tictactoe.gameLogic.GameInfo;
+import tictactoe.gameLogic.Logic;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;

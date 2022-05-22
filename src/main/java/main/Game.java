@@ -1,7 +1,7 @@
 package main;
 
-import bigBoard.BigBoard;
-import gameInfo.GameInfo;
+import tictactoe.Arena.BigBoard;
+import tictactoe.gameLogic.GameInfo;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;

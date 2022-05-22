@@ -1,8 +1,7 @@
-package bigBoard;
+package tictactoe.Arena;
 
-import gameLogic.Logic;
+import tictactoe.gameLogic.Logic;
 import javafx.scene.layout.GridPane;
-import smallBoard.SmallBoard;
 
 public class BigBoard extends GridPane {
 
