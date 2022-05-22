@@ -20,7 +20,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        Parent root = createContent();
+        Parent root = sceneBuilder();
         Scene scene = new Scene(root);
 
         String css = Objects.requireNonNull(this.getClass().getResource("/fxml/GameWindow/style.css")).toExternalForm();
@@ -34,7 +34,7 @@ public class Main extends Application {
     }
 
     // TU DAJEMY WSZYSTKIE KOMPONENTY
-    public Parent createContent() throws IOException {
+    public Parent sceneBuilder() throws IOException {
         Pane mainScene = laodFxmlScene();
         addBigBoardToScene(mainScene);
         return mainScene;
