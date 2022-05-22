@@ -1,7 +1,7 @@
-package tictactoe.arena;
+package tictactoe.arena.components;
 
-import tictactoe.gameLogic.GameInfo;
-import tictactoe.gameLogic.Logic;
+import tictactoe.arena.controllers.GameInfo;
+import tictactoe.logic.Logic;
 import javafx.geometry.HPos;
 import javafx.geometry.Pos;
 import javafx.geometry.VPos;
@@ -10,9 +10,7 @@ import javafx.scene.layout.*;
 
 public class SmallBoard extends GridPane {
 
-    public static final int WIDTH = 250;
-    public static final int HEIGHT = 250;
-    public static int WON = 0;
+    public static int boardState = 0;
     private int ID;
 
     public Logic getGameLogic() {
@@ -22,15 +20,13 @@ public class SmallBoard extends GridPane {
     private Logic gameLogic;
     private BigBoard bb;
 
-    // Debug to check if player won
+    // Debug to check if player whoWon
     public int boardWin = 0;
 
     public SmallBoard(int id, BigBoard bb) {
         this.ID = id;
         this.bb = bb;
         gameLogic = new Logic();
-
-        setPrefSize(WIDTH, HEIGHT);
         getStyleClass().add("SmallBoard");
 
         for (int i = 0; i < 3; i++) {
@@ -45,11 +41,11 @@ public class SmallBoard extends GridPane {
         return gameLogic.checkForWin();
     }
 
-    public void setPlayerWon(int won) {
-        WON = won;
+    public void setPlayerWon(int whoWon) {
+        boardState = whoWon;
         System.out.printf("[ board %d ] -> ", ID);
 
-        switch (WON) {
+        switch (boardState) {
             case 1 -> {
                 System.out.println("X WON");
                 getStyleClass().add("WonX");
@@ -69,7 +65,7 @@ public class SmallBoard extends GridPane {
         }
 
         // Update BigBoard logic
-        bb.updateLogic(ID, won);
+        bb.updateLogic(ID, whoWon);
     }
 
     public void updateLogic(int x, int y) {
@@ -81,8 +77,6 @@ public class SmallBoard extends GridPane {
     public void setBoardFull(String text) {
         getChildren().removeIf(node -> node instanceof SmallBoardButton);
         Label label = new Label(text);
-        label.setPrefHeight(HEIGHT);
-        label.setPrefWidth(WIDTH);
         label.setAlignment(Pos.CENTER);
         setValignment(label, VPos.CENTER);
         setHalignment(label, HPos.CENTER);

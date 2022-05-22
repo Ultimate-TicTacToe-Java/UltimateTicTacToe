@@ -1,37 +1,31 @@
-package tictactoe.arena;
+package tictactoe.arena.components;
 
-import tictactoe.gameLogic.Logic;
+import tictactoe.logic.Logic;
 import javafx.scene.layout.GridPane;
 
 public class BigBoard extends GridPane {
 
-    public static final int HEIGHT = 750;
-    public static final int WIDTH = 750;
     private static final int[][] COORDS = new int[9][2];
     private final Logic bigLogic;
 
     public BigBoard() {
         bigLogic = new Logic();
         getStyleClass().add("BigBoard");
-        setPrefSize(WIDTH, HEIGHT);
-
         generateSmallBoards();
     }
 
     private void generateSmallBoards() {
         int ids = 1;
-        GridPane smallBoardsContainer = new GridPane();
-        smallBoardsContainer.getStyleClass().add("SmallBoardsContainer");
+
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 SmallBoard smallBoard = new SmallBoard(ids, this);
                 COORDS[ids - 1][0] = i;
                 COORDS[ids - 1][1] = j;
                 ids++;
-                smallBoardsContainer.add(smallBoard, i, j);
+                add(smallBoard, i, j);
             }
         }
-        add(smallBoardsContainer,0,0);
     }
 
     public void updateLogic(int boardID, int won) {
@@ -44,14 +38,16 @@ public class BigBoard extends GridPane {
     }
 
     public void setPlayerWon(int won) {
-        if (won == 1)
-            System.out.println(
-                    "-------- X WON WHOLE GAME --------");
-        else if (won == 2)
-            System.out.println(
-                    "-------- O WON WHOLE GAME --------");
-        else if (won == 3)
-            System.out.println(
-                    "-------- DRAW OMG WHAT A MATCH --------");
+        switch (won) {
+            case 1 -> {
+                System.out.println("-------- X WON WHOLE GAME --------");
+            }
+            case 2 -> {
+                System.out.println("-------- O WON WHOLE GAME --------");
+            }
+            case 3 -> {
+                System.out.println("-------- DRAW OMG WHAT A MATCH --------");
+            }
+        }
     }
 }
