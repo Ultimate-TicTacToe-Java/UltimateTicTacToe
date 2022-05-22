@@ -3,9 +3,26 @@
     background-color: black;
 }*/
 
+.BigBoard {
+    -fx-padding: 60px;
+}
+
+.SmallBoardsContainer{
+    -fx-border-color: rgba(36,166,183,.9);
+    -fx-border-width: 8;
+}
+.SmallBoard {
+    -fx-opacity: 1;
+    -fx-background-color: rgba(36,166,183,.1);
+    -fx-border-color: rgba(36,166,183,.2);
+    -fx-border-width: 8;
+    -fx-background-radius: 20;
+}
+
+
 .button {
     -fx-background-color: transparent;
-    -fx-border-color: darkgrey;
+    -fx-border-color: '#092937';
     -fx-border-width: 2;
     -fx-padding: 0;
     -fx-font-size: 70;
@@ -14,30 +31,17 @@
     -fx-font-family: "Consolas";
 }
 
-.button .text{
+.button .text {
     -fx-stroke: black;
     -fx-stroke-width: 1.5;
 }
 
-.BigBoard {
-    -fx-padding: 50px;
-    -fx-border-width: 20;
-    background-color: aqua;
-    background-color: aqua;
-}
-
-.SmallBoard {
-    -fx-opacity: 1;
-    -fx-background-color: transparent;
-    -fx-border-color: black;
-    -fx-border-width: 3;
-}
 
 .Draw {
     -fx-border-color: yellow;
 }
 
-.Draw .label{
+.Draw .label {
     -fx-font-size: 150;
     -fx-font-weight: bold;
     -fx-text-fill: yellow;
@@ -47,7 +51,7 @@
     -fx-border-color: red;
 }
 
-.WonX .label{
+.WonX .label {
     -fx-font-size: 200;
     -fx-font-weight: bold;
     -fx-text-fill: red;
@@ -57,7 +61,7 @@
     -fx-border-color: blue;
 }
 
-.WonO .label{
+.WonO .label {
     -fx-font-size: 200;
     -fx-font-weight: bold;
     -fx-text-fill: blue;
