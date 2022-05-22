@@ -1,6 +1,6 @@
-package main;
+package tictactoe;
 
-import tictactoe.Arena.BigBoard;
+import tictactoe.arena.BigBoard;
 import tictactoe.gameLogic.GameInfo;
 import javafx.application.Application;
 import javafx.scene.Parent;
@@ -11,31 +11,24 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.util.Objects;
+
 import javafx.fxml.FXMLLoader;
 
-public class Game extends Application {
+public class Main extends Application {
 
     // TU DAJEMY WSZYSTKIE KOMPONENTY
     public Parent createContent() {
-        FXMLLoader temp = new FXMLLoader(getClass().getResource("/GameWindow/main.fxml"));
-
-        // STACKPANE - naklada elementy na siebie, przez co board jest na fxmlu, ale nw
-        // czy da sie
-        // fajnie rozmiescic inne potrzebne elementy :(
+        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/GameWindow/main.fxml"));
         StackPane root = new StackPane();
-        Pane backgroundPane = null;
         try {
-            backgroundPane = temp.load();
+            Pane backgroundPane = fxml.load();
+            BigBoard bigBoard = new BigBoard();
+            root.getChildren().addAll(backgroundPane, bigBoard);
         } catch (IOException e) {
             e.printStackTrace();
+        } finally {
+            return root;
         }
-
-        // BOARD
-        BigBoard bigBoard = new BigBoard();
-
-        root.getChildren().addAll(backgroundPane, bigBoard);
-
-        return root;
     }
 
     @Override

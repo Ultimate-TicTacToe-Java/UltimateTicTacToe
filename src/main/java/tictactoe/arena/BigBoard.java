@@ -1,4 +1,4 @@
-package tictactoe.Arena;
+package tictactoe.arena;
 
 import tictactoe.gameLogic.Logic;
 import javafx.scene.layout.GridPane;

@@ -1,4 +1,4 @@
-package tictactoe.Arena;
+package tictactoe.arena;
 
 import javafx.scene.control.Button;
 

@@ -9,6 +9,6 @@ module com.example.ultimatetictactoe {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
 
-    opens main to javafx.fxml;
-    exports main;
+    exports tictactoe;
+    opens tictactoe to javafx.fxml;
 }
