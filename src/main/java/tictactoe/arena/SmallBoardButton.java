@@ -3,8 +3,8 @@ package tictactoe.arena;
 import javafx.scene.control.Button;
 
 public class SmallBoardButton extends Button {
-    public static final int WIDTH = 100;
-    public static final int HEIGHT = 100;
+//    public static final int WIDTH = 100;
+//    public static final int HEIGHT = 100;
     // private final int x;
     // private final int y;
     // private static int i = 0;
@@ -15,7 +15,7 @@ public class SmallBoardButton extends Button {
         this.gameBoard = board;
         // this.x = x;
         // this.y = y;
-        setPrefSize(WIDTH, HEIGHT);
+//        setPrefSize(WIDTH, HEIGHT);
         setFocused(false);
 
         // CO SIE DZIEJE PO KLIKNIECIU

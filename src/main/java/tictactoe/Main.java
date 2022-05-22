@@ -1,7 +1,7 @@
 package tictactoe;
 
 import tictactoe.arena.BigBoard;
-import tictactoe.gameLogic.GameInfo;
+import tictactoe.arena.controllers.GameInfo;
 import javafx.application.Application;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,7 +18,7 @@ public class Main extends Application {
 
     // TU DAJEMY WSZYSTKIE KOMPONENTY
     public Parent createContent() {
-        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/GameWindow/main.fxml"));
+        FXMLLoader fxml = new FXMLLoader(getClass().getResource("/fxml/GameWindow/main.fxml"));
         StackPane root = new StackPane();
         try {
             Pane backgroundPane = fxml.load();
@@ -36,7 +36,7 @@ public class Main extends Application {
         Parent root = createContent();
         Scene scene = new Scene(root);
 
-        String css = Objects.requireNonNull(this.getClass().getResource("/main/style.css")).toExternalForm();
+        String css = Objects.requireNonNull(this.getClass().getResource("/fxml/GameWindow/style.css")).toExternalForm();
         scene.getStylesheets().add(css);
 
         primaryStage.setTitle("Ultimate Tic Tac Toe!");

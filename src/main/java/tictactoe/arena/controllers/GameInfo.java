@@ -1,4 +1,4 @@
-package tictactoe.gameLogic;
+package tictactoe.arena.controllers;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;

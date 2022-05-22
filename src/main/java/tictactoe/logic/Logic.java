@@ -1,4 +1,4 @@
-package tictactoe.gameLogic;
+package tictactoe.logic;
 
 public class Logic {
 

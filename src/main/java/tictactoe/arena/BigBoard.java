@@ -1,20 +1,17 @@
 package tictactoe.arena;
 
-import tictactoe.gameLogic.Logic;
+import javafx.scene.control.Label;
+import tictactoe.logic.Logic;
 import javafx.scene.layout.GridPane;
 
 public class BigBoard extends GridPane {
 
-    public static final int HEIGHT = 750;
-    public static final int WIDTH = 750;
     private static final int[][] COORDS = new int[9][2];
     private final Logic bigLogic;
 
     public BigBoard() {
         bigLogic = new Logic();
         getStyleClass().add("BigBoard");
-        setPrefSize(WIDTH, HEIGHT);
-
         generateSmallBoards();
     }
 

@@ -4,10 +4,16 @@
 }*/
 
 .BigBoard {
-    -fx-padding: 80px;
+    -fx-padding: 85px;
 }
 
 .SmallBoardsContainer{
+    -fx-pref-height: 750;
+    -fx-pref-width: 750;
+
+    -fx-alignment: center;
+    -fx-padding: 20;
+
     -fx-border-color: rgba(36,166,183,.9);
     -fx-border-width: 10;
     -fx-border-radius: 15;
@@ -15,7 +21,7 @@
     -fx-background-color: rgba(17, 91, 100, 0.5);
     -fx-background-radius: 20;
 
-    -fx-padding: 3;
+
 }
 .SmallBoard {
     -fx-opacity: 1;
@@ -26,8 +32,13 @@
     -fx-border-color: rgba(17, 91, 100, 0.3);
     -fx-border-width: 3;
 
-    -fx-max-height: 250;
-    -fx-max-width: 250;
+    /*-fx-max-height: 250;*/
+    /*-fx-max-width: 250;*/
+    -fx-pref-height: 240px;
+    -fx-min-width: 240px;
+
+    -fx-text-alignment: center;
+    -fx-alignment: center ;
 }
 
 
@@ -42,6 +53,12 @@
     -fx-font-weight: bold;
     -fx-text-fill: white;
     -fx-font-family: "Consolas";
+
+    -fx-max-width: 100px;
+    -fx-min-width: 85px;
+
+    -fx-max-height: 100px;
+    -fx-min-height: 85;
 }
 
 .button .text {
