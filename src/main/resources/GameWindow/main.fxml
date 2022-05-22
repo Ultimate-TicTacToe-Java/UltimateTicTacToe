@@ -9,22 +9,21 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1506.0"
-      styleClass="backgroundColor" stylesheets="@../main/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1506.0" styleClass="backgroundColor" stylesheets="@../main/style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Group layoutX="563.0" layoutY="119.0">
+      <Group layoutX="607.0" layoutY="105.0">
          <children>
-            <ImageView fitHeight="777.0" fitWidth="500.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="822.0" fitWidth="500.0" layoutX="51.0" layoutY="199.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/Asset6.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="219.0" fitWidth="264.0" layoutX="402.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="219.0" fitWidth="264.0" layoutX="457.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../img/loopInf2Once.gif" />
                </image>
             </ImageView>
-            <VBox layoutX="501.0" layoutY="474.0" prefHeight="196.0" prefWidth="380.0">
+            <VBox layoutX="473.0" layoutY="529.0" prefHeight="196.0" prefWidth="380.0">
                <children>
                   <Label prefHeight="27.0" prefWidth="380.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Teraz rusza się" textAlignment="CENTER" textFill="#ffffffe5">
                      <font>
@@ -53,7 +52,7 @@
                   </ImageView>
                </children>
             </VBox>
-            <VBox layoutX="499.0" layoutY="265.0" prefHeight="161.0" prefWidth="383.0">
+            <VBox layoutX="471.0" layoutY="328.0" prefHeight="161.0" prefWidth="383.0">
                <children>
                   <Label prefHeight="39.0" prefWidth="383.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Czas Rozgrywki:" textAlignment="CENTER" textFill="#ffffffe5">
                      <font>

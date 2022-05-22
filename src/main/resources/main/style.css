@@ -4,27 +4,40 @@
 }*/
 
 .BigBoard {
-    -fx-padding: 60px;
+    -fx-padding: 80px;
 }
 
 .SmallBoardsContainer{
     -fx-border-color: rgba(36,166,183,.9);
-    -fx-border-width: 8;
+    -fx-border-width: 10;
+    -fx-border-radius: 15;
+
+    -fx-background-color: rgba(17, 91, 100, 0.5);
+    -fx-background-radius: 20;
+
+    -fx-padding: 3;
 }
 .SmallBoard {
     -fx-opacity: 1;
+
     -fx-background-color: rgba(36,166,183,.1);
+
     -fx-border-color: rgba(36,166,183,.2);
-    -fx-border-width: 8;
-    -fx-background-radius: 20;
+    -fx-border-color: rgba(17, 91, 100, 0.3);
+    -fx-border-width: 3;
+
+    -fx-max-height: 250;
+    -fx-max-width: 250;
 }
 
 
 .button {
-    -fx-background-color: transparent;
-    -fx-border-color: '#092937';
-    -fx-border-width: 2;
+    -fx-background-color: rgba(180, 199, 211,1);
+    -fx-border-color: rgba(138, 146, 162,1);
+    -fx-border-radius: 0;
+    -fx-border-width: .6;
     -fx-padding: 0;
+
     -fx-font-size: 70;
     -fx-font-weight: bold;
     -fx-text-fill: white;
@@ -32,13 +45,15 @@
 }
 
 .button .text {
-    -fx-stroke: black;
-    -fx-stroke-width: 1.5;
+    -fx-text-inner-color: red;
+    -fx-text-fill: red;
 }
 
 
 .Draw {
     -fx-border-color: yellow;
+    -fx-max-height: 250;
+    -fx-max-width: 250;
 }
 
 .Draw .label {
@@ -49,20 +64,24 @@
 
 .WonX {
     -fx-border-color: red;
+    -fx-max-height: 250;
+    -fx-max-width: 250;
 }
 
 .WonX .label {
-    -fx-font-size: 200;
+    -fx-font-size: 150;
     -fx-font-weight: bold;
     -fx-text-fill: red;
 }
 
 .WonO {
     -fx-border-color: blue;
+    -fx-max-height: 250;
+    -fx-max-width: 250;
 }
 
 .WonO .label {
-    -fx-font-size: 200;
+    -fx-font-size: 150;
     -fx-font-weight: bold;
     -fx-text-fill: blue;
 }

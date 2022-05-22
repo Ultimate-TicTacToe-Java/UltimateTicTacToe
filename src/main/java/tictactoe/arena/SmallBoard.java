@@ -10,8 +10,8 @@ import javafx.scene.layout.*;
 
 public class SmallBoard extends GridPane {
 
-    public static final int WIDTH = 300;
-    public static final int HEIGHT = 300;
+    public static final int WIDTH = 250;
+    public static final int HEIGHT = 250;
     public static int WON = 0;
     private int ID;
 

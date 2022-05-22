@@ -5,8 +5,8 @@ import javafx.scene.layout.GridPane;
 
 public class BigBoard extends GridPane {
 
-    public static final int HEIGHT = 900;
-    public static final int WIDTH = 900;
+    public static final int HEIGHT = 750;
+    public static final int WIDTH = 750;
     private static final int[][] COORDS = new int[9][2];
     private final Logic bigLogic;
 
@@ -20,15 +20,18 @@ public class BigBoard extends GridPane {
 
     private void generateSmallBoards() {
         int ids = 1;
+        GridPane smallBoardsContainer = new GridPane();
+        smallBoardsContainer.getStyleClass().add("SmallBoardsContainer");
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 SmallBoard smallBoard = new SmallBoard(ids, this);
                 COORDS[ids - 1][0] = i;
                 COORDS[ids - 1][1] = j;
                 ids++;
-                add(smallBoard, i, j);
+                smallBoardsContainer.add(smallBoard, i, j);
             }
         }
+        add(smallBoardsContainer,0,0);
     }
 
     public void updateLogic(int boardID, int won) {
