@@ -5,7 +5,10 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -20,7 +23,7 @@
             </ImageView>
             <ImageView fitHeight="219.0" fitWidth="264.0" layoutX="457.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@img/boatOnce.gif" />
+                  <Image url="@img/boatLoop.gif" />
                </image>
             </ImageView>
             <VBox layoutX="473.0" layoutY="529.0" prefHeight="196.0" prefWidth="380.0">
@@ -68,7 +71,7 @@
             </VBox>
          </children>
       </Group>
-      <Label layoutX="1045.0" layoutY="32.0" prefHeight="146.0" prefWidth="426.0" style="-fx-font-size: 50; -fx-font-family: arial; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" styleClass="tictactoeLogo" text="UltimateTic Tac Toe" textAlignment="CENTER" textFill="#a7f5ff" wrapText="true">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="894.0" layoutY="32.0" prefHeight="146.0" prefWidth="577.0" style="-fx-font-size: 50; -fx-font-family: arial; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" styleClass="tictactoeLogo" text="UltimateTic Tac Toe" textAlignment="CENTER" textFill="#a7f5ff" wrapText="true">
          <font>
             <Font name="Arial" size="17.0" />
          </font>
@@ -76,5 +79,17 @@
             <Insets left="20.0" />
          </padding>
       </Label>
+      <GridPane id="GameArenaContainer" alignment="CENTER" layoutX="60.0" layoutY="105.0" prefHeight="1000.0" prefWidth="1000.0" styleClass=".GameArenaContainer" stylesheets="@style.css">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+      
+
+         </children>
+      </GridPane>
    </children>
 </Pane>

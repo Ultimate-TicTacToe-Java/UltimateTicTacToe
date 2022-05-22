@@ -1,4 +1,4 @@
-package tictactoe.arena;
+package tictactoe.arena.components;
 
 import tictactoe.arena.controllers.GameInfo;
 import tictactoe.logic.Logic;

@@ -1,106 +1,122 @@
-/*.root {
-    color: aliceblue;
-    background-color: black;
-}*/
+/*Vars declaration here */
+* {
+    /*main game arena config*/
+    -fx-BorderColor: rgba(36, 166, 183, .9);
+    -fx-containerSize: 803px; /* +3 couz padding isn't calc automaticlly )*/
+    -fx-smallBoardSize: 258px;
+    -fx-buttonSize: 85px;
+    -fx-buttonContentColor: rgba(14, 73, 80, 0.9); /*X O inside button*/
 
-.BigBoard {
-    -fx-padding: 85px;
+    /*finished board config*/
+    -fx-finishedBoardScaling: 0.98;
+    -fx-BoardDrawColor: yellow;
+    -fx-BoardWonXColor: red;
+    -fx-BoardWonOColor: blue;
+
+    /*logo config*/
+    -fx-LogoFontColor: rgba(167, 245, 255, 1);
 }
 
-.SmallBoardsContainer{
-    -fx-pref-height: 750;
-    -fx-pref-width: 750;
+.BigBoard {
+    -fx-padding: 0px;
+}
+
+#GameArenaContainer {
+    -fx-pref-height: -fx-containerSize;
+    -fx-pref-width: -fx-containerSize;
 
     -fx-alignment: center;
-    -fx-padding: 20;
-
-    -fx-border-color: rgba(36,166,183,.9);
-    -fx-border-width: 10;
-    -fx-border-radius: 15;
+    -fx-padding: 5px;
 
     -fx-background-color: rgba(17, 91, 100, 0.5);
     -fx-background-radius: 20;
 
-
+    -fx-border-color: -fx-BorderColor;
+    -fx-border-width: 10;
+    -fx-border-radius: 15;
 }
+
 .SmallBoard {
-    -fx-opacity: 1;
+    -fx-pref-height: -fx-smallBoardSize;
+    -fx-min-width: -fx-smallBoardSize;
 
-    -fx-background-color: rgba(36,166,183,.1);
+    -fx-background-color: rgba(36, 166, 183, .1);
 
-    -fx-border-color: rgba(36,166,183,.2);
+    -fx-border-color: rgba(36, 166, 183, .2);
     -fx-border-color: rgba(17, 91, 100, 0.3);
     -fx-border-width: 3;
 
-    /*-fx-max-height: 250;*/
-    /*-fx-max-width: 250;*/
-    -fx-pref-height: 240px;
-    -fx-min-width: 240px;
-
     -fx-text-alignment: center;
-    -fx-alignment: center ;
+    -fx-alignment: center;
 }
 
 
 .button {
-    -fx-background-color: rgba(180, 199, 211,1);
-    -fx-border-color: rgba(138, 146, 162,1);
+    -fx-pref-width: -fx-buttonSize;
+    -fx-pref-height: -fx-buttonSize;
+
+    -fx-padding: 0;
+
+    -fx-background-color: rgba(180, 199, 211, 1);
+
+    -fx-border-color: rgba(138, 146, 162, 1);
     -fx-border-radius: 0;
     -fx-border-width: .6;
-    -fx-padding: 0;
+
 
     -fx-font-size: 70;
     -fx-font-weight: bold;
-    -fx-text-fill: white;
+    -fx-text-fill: -fx-buttonContentColor;
     -fx-font-family: "Consolas";
-
-    -fx-max-width: 100px;
-    -fx-min-width: 85px;
-
-    -fx-max-height: 100px;
-    -fx-min-height: 85;
 }
 
 .button .text {
-    -fx-text-inner-color: red;
-    -fx-text-fill: red;
+    -fx-text-inner-color: #44f309;
+    -fx-text-fill: #50f600;
 }
 
 
 .Draw {
-    -fx-border-color: yellow;
-    -fx-max-height: 250;
-    -fx-max-width: 250;
+    -fx-border-color: -fx-BoardDrawColor;
+    -fx-pref-width: -fx-smallBoardSize;
+    -fx-pref-height: -fx-smallBoardSize;
+    -fx-scale-x: -fx-finishedBoardScaling;
+    -fx-scale-y: -fx-finishedBoardScaling;
 }
 
 .Draw .label {
     -fx-font-size: 150;
     -fx-font-weight: bold;
-    -fx-text-fill: yellow;
+    -fx-text-fill: -fx-BoardDrawColor;
 }
 
 .WonX {
-    -fx-border-color: red;
-    -fx-max-height: 250;
-    -fx-max-width: 250;
+    -fx-border-color: -fx-BoardWonXColor;
+    -fx-pref-width: -fx-smallBoardSize;
+    -fx-pref-height: -fx-smallBoardSize;
+    -fx-scale-x: -fx-finishedBoardScaling;
+    -fx-scale-y: -fx-finishedBoardScaling;
+
 }
 
 .WonX .label {
     -fx-font-size: 150;
     -fx-font-weight: bold;
-    -fx-text-fill: red;
+    -fx-text-fill: -fx-BoardWonXColor;
 }
 
 .WonO {
-    -fx-border-color: blue;
-    -fx-max-height: 250;
-    -fx-max-width: 250;
+    -fx-border-color: -fx-BoardWonOColor;
+    -fx-pref-width: -fx-smallBoardSize;
+    -fx-pref-height: -fx-smallBoardSize;
+    -fx-scale-x: -fx-finishedBoardScaling;
+    -fx-scale-y: -fx-finishedBoardScaling;
 }
 
 .WonO .label {
     -fx-font-size: 150;
     -fx-font-weight: bold;
-    -fx-text-fill: blue;
+    -fx-text-fill: -fx-BoardWonOColor;
 }
 
 .backgroundColor {
@@ -118,5 +134,5 @@
 .tictactoeLogo {
     /*-fx-font-family: "uLove";*/
     -fx-font-family: 'Water Brush', cursive;
-    -fx-color: #a7f5ff;
+    -fx-color: -fx-LogoFontColor;
 }
