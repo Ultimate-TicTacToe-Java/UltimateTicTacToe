@@ -11,7 +11,7 @@ import javafx.scene.layout.*;
 public class SmallBoard extends GridPane {
 
     public static int boardState = 0;
-    private int ID;
+    private final int ID;
 
     public Logic getGameLogic() {
         return gameLogic;
