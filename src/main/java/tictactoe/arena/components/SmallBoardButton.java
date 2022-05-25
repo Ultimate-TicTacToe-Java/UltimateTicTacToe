@@ -13,9 +13,16 @@ public class SmallBoardButton extends Button {
 
         // CO SIE DZIEJE PO KLIKNIECIU
         setOnAction(e -> {
-            if (gameBoard.checkBoardWin() != 0)
-                return;
 
+            // Check for bitBoard win
+            if (BigBoard.checkForWin() != 0) {
+                return;
+            }
+
+            // Check for smallBoard win
+            if (gameBoard.checkBoardWin() != 0) {
+                return;
+            }
             if (!this.getText().isEmpty())
                 return;
             setText(String.valueOf(gameBoard.getGameLogic().getMark()));

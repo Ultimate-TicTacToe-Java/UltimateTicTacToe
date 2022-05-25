@@ -7,12 +7,15 @@ import javafx.scene.layout.GridPane;
 public class BigBoard extends GridPane {
 
     private static final int[][] coords = new int[9][2];
-    private final Logic bigLogic;
+    private static final Logic bigLogic = new Logic();
 
     public BigBoard() {
-        bigLogic = new Logic();
         getStyleClass().add("BigBoard");
         generateSmallBoards();
+    }
+
+    public static int checkForWin() {
+        return bigLogic.checkForWin();
     }
 
     private void generateSmallBoards() {
