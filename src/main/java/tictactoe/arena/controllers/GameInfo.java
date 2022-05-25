@@ -67,6 +67,14 @@ public class GameInfo extends GridPane {
         timeline.play();
     }
 
+    private void stopTimer() {
+        timeline.stop();
+    }
+
+    public static void showFinal() {
+//
+    }
+
     private String secondsToString(int pTime) {
         return String.format("%02d:%02d", pTime / 60, pTime % 60);
     }

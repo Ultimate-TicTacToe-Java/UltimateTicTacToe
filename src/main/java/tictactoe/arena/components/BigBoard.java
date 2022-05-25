@@ -1,5 +1,6 @@
 package tictactoe.arena.components;
 
+import tictactoe.arena.controllers.GameInfo;
 import tictactoe.logic.Logic;
 import javafx.scene.layout.GridPane;
 
@@ -33,8 +34,10 @@ public class BigBoard extends GridPane {
 
         bigLogic.update(COORDS[boardID - 1][0], COORDS[boardID - 1][1], c);
         int w = bigLogic.checkForWin();
-        if (w != 0)
+        if (w != 0) {
             setPlayerWon(w);
+            GameInfo.showFinal();
+        }
     }
 
     public void setPlayerWon(int won) {

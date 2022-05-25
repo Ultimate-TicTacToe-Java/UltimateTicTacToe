@@ -1,5 +1,6 @@
 package tictactoe;
 
+import javafx.stage.Popup;
 import tictactoe.arena.components.BigBoard;
 import tictactoe.arena.controllers.GameInfo;
 import javafx.application.Application;
@@ -27,13 +28,13 @@ public class Main extends Application {
         scene.getStylesheets().add(css);
 
         primaryStage.setTitle("Ultimate Tic Tac Toe!");
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
 
         GameInfo info = new GameInfo(scene);
     }
 
-    // TU DAJEMY WSZYSTKIE KOMPONENTY
     public Parent sceneBuilder() throws IOException {
         Pane mainScene = laodFxmlScene();
         addBigBoardToScene(mainScene);
