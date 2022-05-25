@@ -36,7 +36,6 @@ public class BigBoard extends GridPane {
         int w = bigLogic.checkForWin();
         if (w != 0) {
             setPlayerWon(w);
-            GameInfo.showFinal();
         }
     }
     //TODO: check if game is finished
@@ -44,12 +43,18 @@ public class BigBoard extends GridPane {
         switch (won) {
             case 1 -> {
                 System.out.println("-------- X WON WHOLE GAME --------");
+                GameInfo.showFinal("X Won");
+                GameInfo.stopTimer();
             }
             case 2 -> {
                 System.out.println("-------- O WON WHOLE GAME --------");
+                GameInfo.showFinal("O Won");
+                GameInfo.stopTimer();
             }
             case 3 -> {
                 System.out.println("-------- DRAW OMG WHAT A MATCH --------");
+                GameInfo.showFinal("Draw");
+                GameInfo.stopTimer();
             }
         }
     }

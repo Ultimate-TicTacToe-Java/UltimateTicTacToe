@@ -16,6 +16,7 @@ public class GameInfo extends GridPane {
     private char STARTING_PLAYER = 'x';
 
     private static Label labelGameTime;
+    private static Label labelWhoseTurn;
     private static ImageView oSymbol;
     private static ImageView xSymbol;
 
@@ -23,6 +24,7 @@ public class GameInfo extends GridPane {
         labelGameTime = (Label) scene.lookup("#labelGameTime");
         oSymbol = (ImageView) scene.lookup("#oSymbol");
         xSymbol = (ImageView) scene.lookup("#xSymbol");
+        labelWhoseTurn = (Label)scene.lookup("#moveLabel");
         reset();
         startTimer();
     }
@@ -67,12 +69,12 @@ public class GameInfo extends GridPane {
         timeline.play();
     }
 
-    private void stopTimer() {
+    public static void stopTimer() {
         timeline.stop();
     }
 
-    public static void showFinal() {
-//
+    public static void showFinal(String text) {
+        labelWhoseTurn.setText(text);
     }
 
     private String secondsToString(int pTime) {
