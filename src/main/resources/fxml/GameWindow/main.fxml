@@ -28,7 +28,7 @@
             </ImageView>
             <VBox layoutX="473.0" layoutY="529.0" prefHeight="196.0" prefWidth="380.0">
                <children>
-                  <Label prefHeight="27.0" prefWidth="380.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Teraz rusza się" textAlignment="CENTER" textFill="#ffffffe5">
+                  <Label id="moveLabel" prefHeight="27.0" prefWidth="380.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Teraz rusza się" textAlignment="CENTER" textFill="#ffffffe5">
                      <font>
                         <Font size="27.0" />
                      </font>
