@@ -85,7 +85,7 @@
 }
 
 .Draw .label {
-    -fx-font-size: 150;
+    -fx-font-size: 130;
     -fx-font-weight: bold;
     -fx-text-fill: -fx-BoardDrawColor;
 }
@@ -100,7 +100,7 @@
 }
 
 .WonX .label {
-    -fx-font-size: 150;
+    -fx-font-size: 130;
     -fx-font-weight: bold;
     -fx-text-fill: -fx-BoardWonXColor;
 }
@@ -114,7 +114,7 @@
 }
 
 .WonO .label {
-    -fx-font-size: 150;
+    -fx-font-size: 130;
     -fx-font-weight: bold;
     -fx-text-fill: -fx-BoardWonOColor;
 }
