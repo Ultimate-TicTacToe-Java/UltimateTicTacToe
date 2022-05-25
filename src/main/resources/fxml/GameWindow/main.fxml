@@ -2,11 +2,14 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
@@ -33,7 +36,7 @@
                         <Font size="27.0" />
                      </font>
                      <VBox.margin>
-                        <Insets />
+                        <Insets top="50.0" />
                      </VBox.margin>
                   </Label>
                   <Pane id="BoardContainer" prefHeight="900.0" prefWidth="900.0" style="-fx-background-color: #a7f5ff; -fx-opacity: 0.05; -fx-background-radius: 100;" />
@@ -67,6 +70,36 @@
                         <Font size="45.0" />
                      </font>
                   </Label>
+                  <GridPane maxHeight="1.7976931348623157E308">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Button id="resetButton" alignment="CENTER" centerShape="false" contentDisplay="CENTER" focusTraversable="false" maxWidth="600.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="600.0" scaleShape="false" text="Reset" textAlignment="CENTER" textOverrun="CLIP">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets right="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                        <Button id="resetButton" alignment="CENTER" centerShape="false" contentDisplay="CENTER" focusTraversable="false" maxWidth="600.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="600.0" scaleShape="false" text="Wyjdź" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="System Italic" size="3.0" />
+                           </font>
+                           <GridPane.margin>
+                              <Insets left="10.0" />
+                           </GridPane.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </GridPane>
                </children>
             </VBox>
          </children>
@@ -91,5 +124,7 @@
 
          </children>
       </GridPane>
+      <ButtonBar layoutX="251.0" layoutY="34.0" prefHeight="83.0" prefWidth="428.0" />
+      <HBox alignment="CENTER" layoutX="10.0" layoutY="10.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="100.0" />
    </children>
 </Pane>
