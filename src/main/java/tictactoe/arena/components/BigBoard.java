@@ -7,12 +7,15 @@ import javafx.scene.layout.GridPane;
 public class BigBoard extends GridPane {
 
     private static final int[][] coords = new int[9][2];
-    private final Logic bigLogic;
+    private static final Logic bigLogic = new Logic();
 
     public BigBoard() {
-        bigLogic = new Logic();
         getStyleClass().add("BigBoard");
         generateSmallBoards();
+    }
+
+    public static int checkForWin() {
+        return bigLogic.checkForWin();
     }
 
     private void generateSmallBoards() {
@@ -36,7 +39,6 @@ public class BigBoard extends GridPane {
         int w = bigLogic.checkForWin();
         if (w != 0) {
             setPlayerWon(w);
-            GameInfo.showFinal();
         }
     }
     //TODO: check if game is finished
@@ -44,12 +46,18 @@ public class BigBoard extends GridPane {
         switch (won) {
             case 1 -> {
                 System.out.println("-------- X WON WHOLE GAME --------");
+                GameInfo.showFinal("X Won");
+                GameInfo.stopTimer();
             }
             case 2 -> {
                 System.out.println("-------- O WON WHOLE GAME --------");
+                GameInfo.showFinal("O Won");
+                GameInfo.stopTimer();
             }
             case 3 -> {
                 System.out.println("-------- DRAW OMG WHAT A MATCH --------");
+                GameInfo.showFinal("Draw");
+                GameInfo.stopTimer();
             }
         }
     }
