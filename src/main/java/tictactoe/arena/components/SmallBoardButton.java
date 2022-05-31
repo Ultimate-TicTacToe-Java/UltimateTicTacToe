@@ -18,13 +18,13 @@ public class SmallBoardButton extends Button {
             if (BigBoard.checkForWin() != 0) {
                 return;
             }
-
             // Check for smallBoard win
             if (gameBoard.checkBoardWin() != 0) {
                 return;
             }
-            if (!this.getText().isEmpty())
+            if (!this.getText().isEmpty()){
                 return;
+            }
             setText(String.valueOf(gameBoard.getGameLogic().getMark()));
 
             // Update game logic board

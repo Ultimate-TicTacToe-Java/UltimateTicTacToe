@@ -1,6 +1,5 @@
 package tictactoe;
 
-import javafx.stage.Popup;
 import tictactoe.arena.components.BigBoard;
 import tictactoe.arena.controllers.GameInfo;
 import javafx.application.Application;
@@ -36,12 +35,12 @@ public class Main extends Application {
     }
 
     public Parent sceneBuilder() throws IOException {
-        Pane mainScene = laodFxmlScene();
+        Pane mainScene = loadFxmlScene();
         addBigBoardToScene(mainScene);
         return mainScene;
     }
 
-    private Pane laodFxmlScene() throws IOException {
+    private Pane loadFxmlScene() throws IOException {
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("/fxml/GameWindow/main.fxml"));
         Pane mainScene = fxml.load();
         return mainScene;

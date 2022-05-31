@@ -7,7 +7,7 @@ import javafx.scene.layout.GridPane;
 public class BigBoard extends GridPane {
 
     private static final int[][] coords = new int[9][2];
-    private static final Logic bigLogic = new Logic();
+    public static final Logic bigLogic = new Logic();
 
     public BigBoard() {
         getStyleClass().add("BigBoard");
@@ -41,23 +41,26 @@ public class BigBoard extends GridPane {
             setPlayerWon(w);
         }
     }
-    //TODO: check if game is finished
+
     public void setPlayerWon(int won) {
         switch (won) {
             case 1 -> {
                 System.out.println("-------- X WON WHOLE GAME --------");
-                GameInfo.showFinal("X Won");
+                GameInfo.showFinal("X wygrywa");
                 GameInfo.stopTimer();
+                GameInfo.disableXO();
             }
             case 2 -> {
                 System.out.println("-------- O WON WHOLE GAME --------");
-                GameInfo.showFinal("O Won");
+                GameInfo.showFinal("O wygrywa");
                 GameInfo.stopTimer();
+                GameInfo.disableXO();
             }
             case 3 -> {
                 System.out.println("-------- DRAW OMG WHAT A MATCH --------");
-                GameInfo.showFinal("Draw");
+                GameInfo.showFinal("Remis");
                 GameInfo.stopTimer();
+                GameInfo.disableXO();
             }
         }
     }

@@ -2,11 +2,21 @@ package tictactoe.arena.controllers;
 
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
+import javafx.stage.Stage;
 import javafx.util.Duration;
+import tictactoe.Main;
+import tictactoe.arena.components.BigBoard;
+
+import java.io.IOException;
 
 public class GameInfo extends GridPane {
 
@@ -20,13 +30,48 @@ public class GameInfo extends GridPane {
     private static ImageView oSymbol;
     private static ImageView xSymbol;
 
+    private Button exitButton;
+    private Button resetButton;
+
     public GameInfo(Scene scene) {
         labelGameTime = (Label) scene.lookup("#labelGameTime");
         oSymbol = (ImageView) scene.lookup("#oSymbol");
         xSymbol = (ImageView) scene.lookup("#xSymbol");
         labelWhoseTurn = (Label)scene.lookup("#moveLabel");
+        //TIMELINE
+        timeline = new Timeline();
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.getKeyFrames().add(
+                new KeyFrame(Duration.seconds(1), e -> {
+                    labelGameTime.setText(secondsToString(timeInSeconds));
+                    timeInSeconds++;
+                }));
+        //EXIT
+        exitButton = (Button)scene.lookup("#exitButton");
+        exitButton.setOnAction(e -> {
+            Platform.exit();
+        });
+        //RESTART
+        resetButton = (Button)scene.lookup("#resetButton");
+        resetButton.setOnAction( e -> {
+            timeline.stop();
+
+            Parent mainScene = scene.getRoot();
+            Pane boardsContainer = (Pane) mainScene.lookup("#GameArenaContainer");
+            boardsContainer.getChildren().clear();
+
+            BigBoard bigBoard = new BigBoard();
+            BigBoard.bigLogic.clearBoard();
+            boardsContainer.getChildren().add(bigBoard);
+            showFinal("Teraz rusza się:");
+            labelGameTime.setText(secondsToString(0));
+            timeInSeconds = 1;
+            timeline.play();
+            disableXO();
+            setX();
+        });
         reset();
-        startTimer();
+        timeline.play();
     }
 
     private void reset() {
@@ -45,7 +90,7 @@ public class GameInfo extends GridPane {
         }
     }
 
-    private static void disableXO() {
+    public static void disableXO() {
         oSymbol.setVisible(false);
         xSymbol.setVisible(false);
     }
@@ -56,17 +101,6 @@ public class GameInfo extends GridPane {
 
     private static void setO() {
         oSymbol.setVisible(true);
-    }
-
-    private void startTimer() {
-        timeline = new Timeline();
-        timeline.setCycleCount(Timeline.INDEFINITE);
-        timeline.getKeyFrames().add(
-            new KeyFrame(Duration.seconds(1), e -> {
-            labelGameTime.setText(secondsToString(timeInSeconds));
-            timeInSeconds++;
-        }));
-        timeline.play();
     }
 
     public static void stopTimer() {
