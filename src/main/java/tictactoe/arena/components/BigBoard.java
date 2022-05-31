@@ -11,7 +11,6 @@ public class BigBoard extends GridPane {
     private static final int[][] coords = new int[9][2];
     private final Logic bigLogic;
 
-
     public BigBoard() {
         getStyleClass().add("BigBoard");
         bigLogic = new Logic();
@@ -39,7 +38,19 @@ public class BigBoard extends GridPane {
     }
 
     public void updateLogic(int boardID, int won) {
-        char c = won == 1 ? 'x' : 'o';
+        char c = ' ';
+
+        switch (won) {
+            case 1 -> {
+                c = 'x';
+            }
+            case 2 -> {
+                c = 'o';
+            }
+            case 3 -> {
+                c = 'd';
+            }
+        }
 
         bigLogic.update(coords[boardID - 1][0], coords[boardID - 1][1], c);
         int w = bigLogic.checkForWin();
@@ -48,7 +59,7 @@ public class BigBoard extends GridPane {
         }
     }
 
-    //TODO: check if game is finished
+    // TODO: check if game is finished
     public void setPlayerWon(int won) {
         switch (won) {
             case 1 -> {
@@ -62,7 +73,7 @@ public class BigBoard extends GridPane {
                 GameInfo.stopTimer();
             }
             case 3 -> {
-                System.out.println("-------- DRAW OMG WHAT A MATCH --------");
+                System.out.println("------ DRAW OMG WHAT A MATCH -----");
                 GameInfo.showFinal("Draw");
                 GameInfo.stopTimer();
             }

@@ -36,7 +36,6 @@ public class SmallBoard extends GridPane {
             for (int j = 0; j < 3; j++) {
                 SmallBoardButton button = new SmallBoardButton(i, j, this, bb);
                 add(button, i, j);
-                System.out.println(button);
                 idx++;
             }
         }
