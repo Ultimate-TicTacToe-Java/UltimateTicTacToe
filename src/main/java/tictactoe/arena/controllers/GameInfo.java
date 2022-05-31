@@ -11,9 +11,9 @@ import javafx.util.Duration;
 public class GameInfo extends GridPane {
 
     private static Timeline timeline;
-    private int timeInSeconds = 0;
+    private static int timeInSeconds = 0;
 
-    private char STARTING_PLAYER = 'x';
+    private static char STARTING_PLAYER = 'x';
 
     private static Label labelGameTime;
     private static Label labelWhoseTurn;
@@ -29,7 +29,7 @@ public class GameInfo extends GridPane {
         startTimer();
     }
 
-    private void reset() {
+    public static void reset() {
         timeInSeconds = 0;
         update(STARTING_PLAYER);
     }

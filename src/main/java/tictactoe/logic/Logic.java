@@ -16,7 +16,7 @@ public class Logic {
         clearBoard();
     }
 
-    private void clearBoard() {
+    public void clearBoard() {
 
         // Initialize board with `0`
         for(int i = 0; i < 3; i++) {
@@ -24,6 +24,8 @@ public class Logic {
                 game[i][j] = 0;
             }
         }
+        moveCount = 9;
+        currentPlayer = 'x';
     }
 
     public int checkForWin() {

@@ -136,3 +136,8 @@
     -fx-font-family: 'Water Brush', cursive;
     -fx-color: -fx-LogoFontColor;
 }
+
+.menuButton{
+    -fx-font-size: 30;
+    -fx-pref-height: -fx-buttonSize;
+}
