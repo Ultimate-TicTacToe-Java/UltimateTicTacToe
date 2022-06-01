@@ -16,7 +16,7 @@ public class Logic {
         clearBoard();
     }
 
-    private void clearBoard() {
+    public void clearBoard() {
 
         // Initialize board with `0`
         for(int i = 0; i < 3; i++) {
@@ -24,6 +24,8 @@ public class Logic {
                 game[i][j] = 0;
             }
         }
+        moveCount = 9;
+        currentPlayer = 'x';
     }
 
     public int checkForWin() {
@@ -66,6 +68,7 @@ public class Logic {
         // Error codes:
         // 1 - incorrect argument
         // 2 - there is already `x` or `o` on the field
+
         if(moveCount == 0)
             return 2;
 
@@ -83,6 +86,9 @@ public class Logic {
             game[x][y] = 1;
             moveCount--;
             return 0;
+        }
+        if(c == 'd' || c == 'D') {
+            moveCount--;
         }
 
         return 1;

@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.Group?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Pane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1506.0" styleClass="backgroundColor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1000.0" prefWidth="1506.0" styleClass="backgroundColor" stylesheets="@style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Group layoutX="607.0" layoutY="105.0">
          <children>
@@ -58,7 +50,7 @@
                   </ImageView>
                </children>
             </VBox>
-            <VBox layoutX="471.0" layoutY="328.0" prefHeight="161.0" prefWidth="383.0">
+            <VBox id="timevbox" fx:id="timevbox" layoutX="471.0" layoutY="328.0" prefHeight="161.0" prefWidth="383.0">
                <children>
                   <Label prefHeight="39.0" prefWidth="383.0" style="-fx-alignment: center; -fx-effect: dropshadow(three-pass-box, rgba(100,100, 100, 1), 0, 2, -3, 3);" text="Czas Rozgrywki:" textAlignment="CENTER" textFill="#ffffffe5">
                      <font>
@@ -70,35 +62,20 @@
                         <Font size="45.0" />
                      </font>
                   </Label>
-                  <GridPane maxHeight="1.7976931348623157E308">
+                  <GridPane id="buttonsContainer" fx:id="buttonsContainer" alignment="BASELINE_CENTER" maxHeight="1.7976931348623157E308">
                     <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="120.0" />
+                      <ColumnConstraints fillWidth="false" halignment="CENTER" hgrow="SOMETIMES" maxWidth="-Infinity" minWidth="10.0" prefWidth="160.0" />
                     </columnConstraints>
                     <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
                     </rowConstraints>
-                     <children>
-                        <Button id="resetButton" alignment="CENTER" centerShape="false" contentDisplay="CENTER" focusTraversable="false" maxWidth="600.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="600.0" scaleShape="false" text="Reset" textAlignment="CENTER" textOverrun="CLIP">
-                           <font>
-                              <Font name="System Italic" size="17.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets right="10.0" />
-                           </GridPane.margin>
-                        </Button>
-                        <Button id="resetButton" alignment="CENTER" centerShape="false" contentDisplay="CENTER" focusTraversable="false" maxWidth="600.0" mnemonicParsing="false" prefHeight="83.0" prefWidth="600.0" scaleShape="false" text="Wyjdź" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="1">
-                           <font>
-                              <Font name="System Italic" size="3.0" />
-                           </font>
-                           <GridPane.margin>
-                              <Insets left="10.0" />
-                           </GridPane.margin>
-                        </Button>
-                     </children>
                      <VBox.margin>
                         <Insets top="30.0" />
                      </VBox.margin>
+                     <padding>
+                        <Insets left="5.0" right="5.0" />
+                     </padding>
                   </GridPane>
                </children>
             </VBox>

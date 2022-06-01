@@ -11,9 +11,9 @@ import javafx.util.Duration;
 public class GameInfo extends GridPane {
 
     private static Timeline timeline;
-    private int timeInSeconds = 0;
+    private static int timeInSeconds = 0;
 
-    private char STARTING_PLAYER = 'x';
+    private static char STARTING_PLAYER = 'x';
 
     private static Label labelGameTime;
     private static Label labelWhoseTurn;
@@ -25,13 +25,14 @@ public class GameInfo extends GridPane {
         oSymbol = (ImageView) scene.lookup("#oSymbol");
         xSymbol = (ImageView) scene.lookup("#xSymbol");
         labelWhoseTurn = (Label)scene.lookup("#moveLabel");
-        reset();
         startTimer();
+        reset();
     }
 
-    private void reset() {
+    public static void reset() {
         timeInSeconds = 0;
         update(STARTING_PLAYER);
+        timeline.play();
     }
 
     public static void update(char player) {
@@ -43,6 +44,8 @@ public class GameInfo extends GridPane {
         } else {
             setO();
         }
+
+        showFinal("Teraz rusza się");
     }
 
     private static void disableXO() {
@@ -66,7 +69,6 @@ public class GameInfo extends GridPane {
             labelGameTime.setText(secondsToString(timeInSeconds));
             timeInSeconds++;
         }));
-        timeline.play();
     }
 
     public static void stopTimer() {

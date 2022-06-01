@@ -1,6 +1,8 @@
 package tictactoe;
 
-import javafx.stage.Popup;
+import javafx.application.Platform;
+import javafx.scene.control.Button;
+import javafx.scene.layout.GridPane;
 import tictactoe.arena.components.BigBoard;
 import tictactoe.arena.controllers.GameInfo;
 import javafx.application.Application;
@@ -13,8 +15,10 @@ import java.io.IOException;
 import java.util.Objects;
 
 import javafx.fxml.FXMLLoader;
+import tictactoe.logic.Logic;
 
 public class Main extends Application {
+
     public static void main(String[] args) {
         launch();
     }
@@ -38,12 +42,15 @@ public class Main extends Application {
     public Parent sceneBuilder() throws IOException {
         Pane mainScene = laodFxmlScene();
         addBigBoardToScene(mainScene);
+        addExitButton(mainScene);
+        addResetButton(mainScene);
         return mainScene;
     }
 
     private Pane laodFxmlScene() throws IOException {
         FXMLLoader fxml = new FXMLLoader(getClass().getResource("/fxml/GameWindow/main.fxml"));
         Pane mainScene = fxml.load();
+
         return mainScene;
     }
 
@@ -54,4 +61,36 @@ public class Main extends Application {
     }
 
 
+
+    private void addResetButton(Pane backgroundPane){
+        GridPane timebox = (GridPane) backgroundPane.lookup("#buttonsContainer");
+        Button resetButton = new Button("Reset");
+        resetButton.getStyleClass().add("menuButton");
+        timebox.add(resetButton, 1, 0);
+
+        resetButton.setOnAction(event ->{
+            System.out.println("Reset");
+
+            Pane bg = (Pane)backgroundPane.lookup("#GameArenaContainer");
+            bg.getChildren().removeIf(node -> node instanceof BigBoard);
+
+            addBigBoardToScene(backgroundPane);
+
+            GameInfo.reset();
+        });
+
+
+    }
+
+    private void addExitButton(Pane backgroundPane){
+        GridPane timebox = (GridPane) backgroundPane.lookup("#buttonsContainer");
+        Button exitButton = new Button("Exit");
+        exitButton.getStyleClass().add("menuButton");
+        timebox.add(exitButton, 0, 0);
+
+        exitButton.setOnAction(event ->{
+            System.out.println("Exit");
+            Platform.exit();
+        });
+    }
 }
