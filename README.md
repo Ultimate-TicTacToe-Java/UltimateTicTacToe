@@ -13,7 +13,8 @@
 ### CREDITS
 * Font credits - [Blonde Fonts](http://rubberducky.nu/blonde)
 * Image credits - [lobsarts](https://pixabay.com/pl/users/lobsarts-19515294/)
-* 
+
+
 # Game description
 
 Ultimate tic tac toe, is an extension of the taxing game of tic tac toe. 
@@ -102,7 +103,7 @@ Build the project
 - [x] reset button
 - [x] exit button
 - [x] adding appropriate notifications during the game and in case of a player victory
-    - [x] notifications in console are done
+- [x] notifications in console are done
 - [x] testing the game
 - [ ] network implementation of the game (optional)
 
