@@ -64,7 +64,7 @@
     -fx-border-width: .6;
 
 
-    -fx-font-size: 70;
+    -fx-font-size: 50;
     -fx-font-weight: bold;
     -fx-text-fill: -fx-buttonContentColor;
     -fx-font-family: "Consolas";
@@ -85,7 +85,7 @@
 }
 
 .Draw .label {
-    -fx-font-size: 130;
+    -fx-font-size: 100;
     -fx-font-weight: bold;
     -fx-text-fill: -fx-BoardDrawColor;
 }
@@ -138,6 +138,6 @@
 }
 
 .menuButton{
-    -fx-font-size: 30;
+    -fx-font-size: 25;
     -fx-pref-height: -fx-buttonSize;
 }
