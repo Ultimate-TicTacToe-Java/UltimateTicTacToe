@@ -10,6 +10,10 @@
 <div align="center" >
 </div>
 
+### CREDITS
+* Font credits - [Blonde Fonts](http://rubberducky.nu/blonde)
+* Image credits - [lobsarts](https://pixabay.com/pl/users/lobsarts-19515294/)
+* 
 # Game description
 
 Ultimate tic tac toe, is an extension of the taxing game of tic tac toe. 
@@ -35,11 +39,8 @@ This section should list any major frameworks/libraries used to bootstrap your p
 * [Open JavaFX SDK](https://openjfx.io/)
 * [yUML](https://yuml.me/)
 
-* Font credits - [Blonde Fonts](http://rubberducky.nu/blonde)
-* Image credits - [lobsarts](https://pixabay.com/pl/users/lobsarts-19515294/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
-
 
 <!-- GETTING STARTED -->
 # Installation
@@ -92,13 +93,17 @@ Build the project
 ## Backlog
 
 - [x] create a smaller tic-tac-toe game board
+- [x] add UML diagram
 - [x] create main game board consisting of 9 smaller fields
 - [x] handling the OnClick event when the player presses the mouse button on a given field
 - [x] check if the player has won the game in a given field
 - [x] check if the player has won the game on the main board
-- [ ] adding appropriate notifications during the game and in case of a player victory
+- [x] add new design
+- [x] reset button
+- [x] exit button
+- [x] adding appropriate notifications during the game and in case of a player victory
     - [x] notifications in console are done
-- [ ] testing the game
+- [x] testing the game
 - [ ] network implementation of the game (optional)
 
 # Class diagram
