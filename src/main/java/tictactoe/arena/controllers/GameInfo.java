@@ -45,7 +45,7 @@ public class GameInfo extends GridPane {
             setO();
         }
 
-        showFinal("Teraz rusza się");
+        showFinal("Now moves player");
     }
 
     private static void disableXO() {

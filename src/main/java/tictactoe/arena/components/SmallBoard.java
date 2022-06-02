@@ -7,9 +7,6 @@ import javafx.geometry.Pos;
 import javafx.geometry.VPos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
-import tictactoe.arena.components.SmallBoardButton;
-
-import java.util.ArrayList;
 
 public class SmallBoard extends GridPane {
     public static int boardState = 0;
@@ -32,11 +29,9 @@ public class SmallBoard extends GridPane {
         getStyleClass().add("SmallBoard");
 
         for (int i = 0; i < 3; i++) {
-            int idx = 0;
             for (int j = 0; j < 3; j++) {
-                SmallBoardButton button = new SmallBoardButton(i, j, this, bb);
+                SmallBoardButton button = new SmallBoardButton(i, j, this);
                 add(button, i, j);
-                idx++;
             }
         }
     }
@@ -51,18 +46,15 @@ public class SmallBoard extends GridPane {
 
         switch (boardState) {
             case 1 -> {
-                System.out.println("X WON");
                 getStyleClass().add("WonX");
                 setBoardFull("X");
             }
             case 2 -> {
-                System.out.println("O WON");
                 getStyleClass().add("WonO");
                 setBoardFull("O");
             }
 
             case 3 -> {
-                System.out.println("DRAW");
                 getStyleClass().add("Draw");
                 setBoardFull("X/O");
             }

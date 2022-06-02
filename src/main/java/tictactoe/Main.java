@@ -15,7 +15,6 @@ import java.io.IOException;
 import java.util.Objects;
 
 import javafx.fxml.FXMLLoader;
-import tictactoe.logic.Logic;
 
 public class Main extends Application {
 
@@ -37,6 +36,7 @@ public class Main extends Application {
         primaryStage.show();
 
         GameInfo info = new GameInfo(scene);
+        if(info != null) {};
     }
 
     public Parent sceneBuilder() throws IOException {
@@ -69,7 +69,6 @@ public class Main extends Application {
         timebox.add(resetButton, 1, 0);
 
         resetButton.setOnAction(event ->{
-            System.out.println("Reset");
 
             Pane bg = (Pane)backgroundPane.lookup("#GameArenaContainer");
             bg.getChildren().removeIf(node -> node instanceof BigBoard);
@@ -89,7 +88,6 @@ public class Main extends Application {
         timebox.add(exitButton, 0, 0);
 
         exitButton.setOnAction(event ->{
-            System.out.println("Exit");
             Platform.exit();
         });
     }

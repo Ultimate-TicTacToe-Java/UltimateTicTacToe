@@ -4,11 +4,9 @@ import javafx.scene.control.Button;
 
 public class SmallBoardButton extends Button {
 
-    private BigBoard bigBoard;
     private SmallBoard gameBoard;
 
-    public SmallBoardButton(int x, int y, SmallBoard board, BigBoard bigBoard) {
-        this.bigBoard = bigBoard;
+    public SmallBoardButton(int x, int y, SmallBoard board) {
         this.gameBoard = board;
         setFocused(false);
 
@@ -16,7 +14,7 @@ public class SmallBoardButton extends Button {
         setOnAction(e -> {
 
             // Check for bigBoard win
-            if (bigBoard.checkForWin() != 0) {
+            if (BigBoard.checkForWin() != 0) {
                 return;
             }
 
@@ -39,8 +37,7 @@ public class SmallBoardButton extends Button {
         });
     }
 
-    public void resetValue(){
+    public void resetValue() {
         this.setText("");
     }
-
 }

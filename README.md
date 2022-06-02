@@ -3,7 +3,7 @@
 <br />
 <div align="center">
   <h1>🕹️<br><br>❌ Ultimate <b>Tic Tac Toe</b>⭕<br><br>
-<img src="images/visuals.png" width="90%"/>
+<img src="images/screenshot.png" width="90%"/>
 </h1>
 </div>
 
