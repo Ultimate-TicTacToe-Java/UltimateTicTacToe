@@ -1,10 +1,10 @@
-[Gra]1<>-1[Duża plansza]
-[Gra]1-2[Gracz]
+[Game]1<>-1[Big board]
+[Game]1-2[Player]
 
-[Duża plansza]1<>-9[Mała plansza]
-[Mała plansza]1<>-9[Pole]
+[Big board]1<>-9[Small board]
+[Small board]1<>-9[Button]
 
-[Pole]*<>-0..1[Symbol]
-[Symbol]^-[Kółko]
-[Gracz]1<>-1[Symbol]
-[Symbol]^-[Krzyżyk]
+[Button]*<>-0..1[Symbol]
+[Symbol]^-[Circle]
+[Player]1<>-1[Symbol]
+[Symbol]^-[Cross]
