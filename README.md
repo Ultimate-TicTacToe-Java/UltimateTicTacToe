@@ -104,6 +104,7 @@ Build the project
 - [x] exit button
 - [x] adding appropriate notifications during the game and in case of a player victory
 - [x] notifications in console are done
+- [x] add design using SceneBuilder
 - [x] testing the game
 - [ ] network implementation of the game (optional)
 
