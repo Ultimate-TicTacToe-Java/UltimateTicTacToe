@@ -109,7 +109,9 @@ Build the project
 - [ ] network implementation of the game (optional)
 
 # Class diagram
-![UML diagram](images/diagram.png)
 
+<div align="center" >
+ <img src="images/diagram.png" />
+</div>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
